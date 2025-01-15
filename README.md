@@ -28,6 +28,11 @@ Grupo1_Lote10_AnalisisRNASeq/
 └── docs/          # Documentación adicional
 
 ## Instrucciones de uso
+El repositorio consta de dos carpetas principales que son "analisis" y "Resultados".
+
+En la carpeta "analisis" hay dos subcarpetas "data" y "scripts" que contienen los datos y los programas para el análisis de RNAseq. 
+
+En la carpeta "Resultados" aparcen los resultados del análisis. 
 
 ## Colaboradores
 
