@@ -12,11 +12,10 @@ El objetivo principal es analizar la expresión génica de un conjunto de muestr
 5. [Licencia](#licencia)
 
 ## Objetivos
-- Cuantificar la expresión génica.
-- Identificar isoformas y variantes.
-- Análisis diferencial de expresión.
-- Descubrir nuevos genes/transcritos
-- Analizar vías biológicas
+- Cuantificar la expresión génica: Medir los niveles de expresión de genes e identificar las diferencias.
+- Análisis diferencial de expresión: Comparar la expresión entre grupos y encontrar genes claves.
+- Descubrir nuevos genes/transcritos: Identificar genes no anotados y ARN no codificantes.
+- Analizar vías biológicas: Relacionar genes con procesos y redes biológicas importantes.
 
 
 ## Estructura del proyecto 
