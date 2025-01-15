@@ -1,0 +1,68 @@
+---
+title: "Pipeline Básico de RNA-Seq"
+author: "Grupo1_Lote10"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Introducción
+Este pipeline realiza un análisis básico de RNA-Seq utilizando un archivo de conteo de genes. Incluye la lectura de datos, normalización y visualización.
+
+## Cargar librerías
+```{r setup, include=TRUE}
+# Instalar y cargar paquetes necesarios
+if (!requireNamespace("DESeq2", quietly = TRUE)) install.packages("DESeq2")
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+
+library(DESeq2)
+library(ggplot2)
+```
+
+## Leer los datos
+
+```{r}
+# Leer archivo CSV
+data_path <- "../Data/data.csv"  # Ajusta la ruta según tu estructura
+data <- read.csv(data_path, row.names = 1)
+
+# Visualizar los primeros registros
+head(data)
+```
+
+## Normalización de los datos
+
+```{r}
+# Crear un objeto DESeqDataSet
+dds <- DESeqDataSetFromMatrix(countData = data,
+                              colData = data.frame(condition = c("Control", "Tratamiento", "Tratamiento")),
+                              design = ~ condition)
+
+# Normalización
+dds <- estimateSizeFactors(dds)
+normalized_counts <- counts(dds, normalized = TRUE)
+
+# Mostrar datos normalizados
+head(normalized_counts)
+```
+
+## Visualización de los datos
+
+```{r}
+# Visualización de distribución de datos normalizados
+boxplot(normalized_counts, main = "Distribución de genes normalizados", col = rainbow(ncol(normalized_counts)))
+```
+
+## Análisis diferencial de expresión
+
+```{r}
+# Realizar análisis diferencial
+dds <- DESeq(dds)
+res <- results(dds)
+
+# Filtrar genes significativos
+resSig <- res[which(res$padj < 0.05), ]
+write.csv(as.data.frame(resSig), "../Resultados/resultados.txt")
+
+# Mostrar los resultados
+head(resSig)
+```
