@@ -66,3 +66,25 @@ write.csv(as.data.frame(resSig), "../Resultados/resultados.txt")
 # Mostrar los resultados
 head(resSig)
 ```
+
+## Visualización avanzada: Heatmap de genes significativamente expresados
+
+```{r}
+# Instalar y cargar paquete pheatmap si no está instalado
+if (!requireNamespace("pheatmap", quietly = TRUE)) install.packages("pheatmap")
+library(pheatmap)
+
+# Extraer las cuentas normalizadas para los genes significativos
+sig_gene_counts <- normalized_counts[rownames(resSig), ]
+
+# Escalar los datos para resaltar patrones
+scaled_counts <- t(scale(t(sig_gene_counts)))
+
+# Crear el heatmap
+pheatmap(scaled_counts,
+         cluster_rows = TRUE,
+         cluster_cols = TRUE,
+         main = "Heatmap de genes significativamente expresados",
+         color = colorRampPalette(c("blue", "white", "red"))(50),
+         show_rownames = FALSE)  # Oculta nombres de genes si son muchos
+```
