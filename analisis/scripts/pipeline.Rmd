@@ -25,6 +25,12 @@ library(ggplot2)
 data_path <- "../Data/data.csv"  # Ajusta la ruta según tu estructura
 data <- read.csv(data_path, row.names = 1)
 
+# Comprobación de la falta o pérdida de datos. 
+
+any_NA <- any.an(data) 
+
+print(any_NA)
+
 # Visualizar los primeros registros
 head(data)
 ```
