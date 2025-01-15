@@ -42,8 +42,6 @@ En la carpeta "analisis" hay dos subcarpetas "data" y "scripts" que contienen lo
 
 En la carpeta "Resultados" aparcen los resultados del análisis. 
 
-Aquí tienes una versión ampliada de las instrucciones de uso que incluye cómo clonar el repositorio y ejecutar el archivo en RStudio:
-
 ### **1. Clonar el repositorio**
 Primero, clona este repositorio en tu máquina local utilizando la terminal. Si no tienes Git instalado, asegúrate de instalarlo previamente desde [Git](https://git-scm.com/).
 
