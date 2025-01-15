@@ -27,6 +27,14 @@ Grupo1_Lote10_AnalisisRNASeq/
 
 ## Colaboradores
 
+AHai22 - Ángela Hairong Jiménez Santamaría.
+
+Empergar - Emma Pérez García.
+
+NuriaAnt - Nuria Antón Baltanás. 
+
+Banboru - José Antonio Ferrandis Conca.
+
 ## Licencia
 
 Se ha hecho uso de la licencia MIT, esta una de las licencias de software libre más populares y simples. Permite a otros usar, modificar, distribuir, y sublicenciar tu código con muy pocas restricciones, fomentando la colaboración y la reutilización del software.
